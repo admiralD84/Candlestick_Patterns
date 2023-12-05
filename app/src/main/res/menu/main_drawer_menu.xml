@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Basics Section -->
+    <item
+        android:id="@+id/basicsFragment"
+        android:icon="@drawable/ic_basics"
+        android:title="@string/drawer_menu_basics" />
+
+    <!-- Technical Indicators Section -->
+    <item
+        android:id="@+id/indicatorsFragment"
+        android:icon="@drawable/ic_indicators"
+        android:title="@string/drawer_menu_indicators" />
+
+    <!-- Patterns Section -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/bullishPatternsFragment"
+            android:icon="@drawable/ic_bull_trend"
+            android:title="@string/drawer_menu_bull_patterns" />
+
+        <item
+            android:id="@+id/bearishPatternsFragment"
+            android:icon="@drawable/ic_bear_trend"
+            android:title="@string/drawer_menu_bear_patterns" />
+
+        <item
+            android:id="@+id/continuationPatternsFragment"
+            android:icon="@drawable/ic_continue"
+            android:title="@string/drawer_menu_continue_patterns" />
+
+        <item
+            android:id="@+id/reversalPatternsFragment"
+            android:icon="@drawable/ic_revers_chart"
+            android:title="@string/drawer_menu_reverse_patterns" />
+    </group>
+
+    <!-- Separator Line -->
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/placeholder"
+                android:enabled="false"
+                android:title="" />
+        </menu>
+    </item>
+
+    <!-- Share Section -->
+    <item
+        android:id="@+id/share_app"
+        android:icon="@drawable/ic_share_app"
+        android:title="@string/drawer_menu_share" />
+    <!-- Rate Section -->
+    <item
+        android:id="@+id/rate_app"
+        android:icon="@drawable/ic_rate_app"
+        android:title="@string/drawer_menu_rate" />
+    <!-- Information Section -->
+    <item
+        android:id="@+id/about_app"
+        android:icon="@drawable/ic_about"
+        android:title="@string/drawer_menu_about" />
+    <!-- Support Section -->
+    <item
+        android:id="@+id/donate"
+        android:icon="@drawable/ic_dev_help"
+        android:title="@string/drawer_menu_donate" />
+
+</menu>

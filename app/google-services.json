@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "307506944648",
+    "project_id": "candle-patterns-fe26a",
+    "storage_bucket": "candle-patterns-fe26a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307506944648:android:68c4de45a0f70e8e8f5d3d",
+        "android_client_info": {
+          "package_name": "uz.admiraldev.candlepatterns"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKBvZWcucGD5LQ24sJ-04kOSv0ZvcP0LM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

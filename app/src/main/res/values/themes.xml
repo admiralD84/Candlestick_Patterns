@@ -1,0 +1,13 @@
+<resources>
+    <style name="Base.Theme.CandlePatterns" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#1D1F2C</item>
+        <item name="colorPrimaryVariant">@color/light_red</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSecondary">@color/light_blue</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="background">@color/light_grey</item>
+        <item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
+    </style>
+    <style name="Theme.CandlePatterns" parent="Base.Theme.CandlePatterns" />
+</resources>

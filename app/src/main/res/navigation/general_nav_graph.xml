@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.admiraldev.candlepatterns.views.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_reversalPatternsFragment"
+            app:destination="@id/reversalPatternsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bearishPatternsFragment"
+            app:destination="@id/bearishPatternsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_basicsFragment"
+            app:destination="@id/basicsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_continuationPatternsFragment"
+            app:destination="@id/continuationPatternsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bullishPatternsFragment"
+            app:destination="@id/bullishPatternsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_indicatorsFragment"
+            app:destination="@id/indicatorsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basicsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.BasicsFragment"
+        android:label="@string/basics"
+        tools:layout="@layout/fragment_basics" />
+
+    <fragment
+        android:id="@+id/indicatorsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.IndicatorsFragment"
+        android:label="@string/indicator_page_title"
+        tools:layout="@layout/fragment_indicators" />
+
+    <fragment
+        android:id="@+id/bullishPatternsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.BullishPatternsFragment"
+        android:label="@string/bull_page_title"
+        tools:layout="@layout/fragment_bullish" />
+
+    <fragment
+        android:id="@+id/bearishPatternsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.BearishPatternsFragment"
+        android:label="@string/bear_page_title"
+        tools:layout="@layout/fragment_bearish_patterns" />
+
+    <fragment
+        android:id="@+id/continuationPatternsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.ContinuationPatternsFragment"
+        android:label="@string/continue_page_title"
+        tools:layout="@layout/fragment_continution_patterns" />
+
+    <fragment
+        android:id="@+id/reversalPatternsFragment"
+        android:name="uz.admiraldev.candlepatterns.views.ReversalPatternsFragment"
+        android:label="@string/reverse_page_title"
+        tools:layout="@layout/fragment_reversal_patterns" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="uz.admiraldev.candlepatterns.views.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

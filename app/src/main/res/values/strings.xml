@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Candle Patterns</string>
+    <string name="motto">Bilim - barcha muvaffaqiyatlar kalitidir</string>
+    <!-- Images descriptions-->
+    <string name="basic_desc">Description for Basic Concepts image</string>
+    <string name="indicators_desc">Description for Indicators image</string>
+    <string name="bullish_desc">Description for Bullish Trend image</string>
+    <string name="bearish_desc">Description for Bearish Trend image</string>
+    <string name="continue_desc">Description for Continue image</string>
+    <string name="reverse_desc">Description for Reverse image</string>
+    <string name="back_btn_desc">Description for Back button</string>
+    <string name="close_btn_desc">Description for close button</string>
+    <string name="hamburger_menu_desc">Description for Menu icon</string>
+
+    <!-- Cards name texts -->
+    <string name="reverse_pattern">Trend qaytishi \nPatternlari</string>
+    <string name="continue_pattern">Davom etish Patternlari</string>
+    <string name="bull_pattern">Buqa \nPatternlar</string>
+    <string name="bear_pattern">Ayiq \nPatternlar</string>
+    <string name="basics">Asosiy tushunchalar</string>
+    <string name="indicators">Ommabop \nindikatorlar</string>
+
+    <!-- Pages name texts -->
+    <string name="main_page_title">BO\'LIMNI TANLANG</string>
+    <string name="bull_page_title">Buqa patternlar</string>
+    <string name="bear_page_title">Ayiq patternlar</string>
+    <string name="indicator_page_title">Indikatorlar</string>
+    <string name="continue_page_title">Davom etish patternlari</string>
+    <string name="reverse_page_title">Qaytish patternlari</string>
+    <string name="about_app_page_title">Dastur haqida</string>
+
+    <!-- Menu items name texts -->
+    <string name="drawer_menu_home">Bosh sahifaga</string>
+    <string name="drawer_menu_basics">Asosiy tushunchalar</string>
+    <string name="drawer_menu_indicators">Ommabop indikatorlar</string>
+    <string name="drawer_menu_bull_patterns">Buqa patternlari</string>
+    <string name="drawer_menu_bear_patterns">Ayiq patternlari</string>
+    <string name="drawer_menu_continue_patterns">Trend davomi patternlari</string>
+    <string name="drawer_menu_reverse_patterns">Trend o\'zgarishi patternlari</string>
+    <string name="drawer_menu_about">Dastur haqida</string>
+    <string name="drawer_menu_share">Dasturni ulashish</string>
+    <string name="drawer_menu_rate">Dasturni baholash</string>
+    <string name="drawer_menu_donate">Reklamasiz versiya</string>
+
+    <string name="share_text">Salom! Sizga aksiyalar bozorida narxlar harakatini tushinishda yordam beradigan dasturni tavsiya qilaman.\n
+                        Dasturni quyidagi manzildan yuklab oling: https://play.google.com/store/apps/details?id=</string>
+
+    <string name="about_text">
+        Ushbu dastur sizga <font color="#517DA1"><b>Treyding sohasidagi boshlang\'ich bilimlarni
+        egallashga</b></font> hamda ularni mustahkamlashga yordam beradi. Mavjud ma\'lumotlar boyitib
+        boriladi va avtomatik tarzda yuklab olinadi (dasturni yangilash talab etilmaydi)\n\n
+        Dastur orqali siz Treydingda ishlatiluvchi ko\'plab atamalarning ma\'nosini bilib olishingiz,
+        narxlar harakatida yuzaga keluvchi turli savdo patternlarini va ulardan foydalanish
+        qoidalarini o\'rganishingiz mumkin.\n\nDastur Treyding sohasiga doir bilimlarning o\'zbek tilidagi
+        tarjimasini taqdim etadi. <b>Tarjimalar rasmiy emas</b> va ushbu ma\'lumotlarni rasmiy
+        manbalarda chop etish tavsiya qilinmaydi.\n\nDasturni baholab bizni qo\'llab
+        quvvatlashingizni va dastur haqidagi fikr-mulohazalaringizni yozib qoldirishingizni so\'rab qolamiz
+    </string>
+
+
+</resources>
