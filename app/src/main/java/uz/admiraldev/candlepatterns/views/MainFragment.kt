@@ -44,6 +44,9 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         toolbar = binding.toolbar.customToolbar
+        navView = binding.drawerMenu
+        drawerMenu = binding.drawerLayout
+        drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
         activity?.window?.statusBarColor =
             ContextCompat.getColor(requireContext(), R.color.transparent)
@@ -67,14 +70,11 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
                 }
             }
         }
-        navView = binding.drawerMenu
-        drawerMenu = binding.drawerLayout
-        drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-
         return binding.root
     }
 
     private fun showShortedToolbar(title: CharSequence) {
+        drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         binding.toolbar.searchView.visibility = View.GONE
         binding.toolbar.navMenuButton.visibility = View.GONE
         binding.toolbar.btnBack.visibility = View.VISIBLE
@@ -101,7 +101,6 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             if (!searchView!!.isIconified)
                 searchView?.isIconified = true
             drawerMenu.openDrawer(GravityCompat.START)
-            drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
         }
         initClicks()
     }
@@ -120,7 +119,6 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
-
     }
 
     private fun showToolbar(show: Boolean, destination: NavDestination) {
@@ -132,6 +130,7 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             binding.toolbar.btnBack.visibility = View.GONE
         }
         if (show) {
+            drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             toolbarTitle.text = getToolbarTitle(destination)
             if (toolbar.visibility != View.VISIBLE) {
                 myCoroutine.launch {
