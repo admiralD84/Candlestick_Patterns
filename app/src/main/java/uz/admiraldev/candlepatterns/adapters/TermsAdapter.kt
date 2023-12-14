@@ -10,6 +10,11 @@ import uz.admiraldev.candlepatterns.models.TradingTerms
 
 class TermsAdapter(private val termsList: List<TradingTerms>) :
     RecyclerView.Adapter<TermsAdapter.TermsViewHolder>() {
+    private var onTermsClickListener: TermsAdapter.OnTermClickListener? = null
+    fun setOnTermsClickListener(listener: TermsAdapter.OnTermClickListener) {
+        onTermsClickListener = listener
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TermsViewHolder {
         val contentItemView = LayoutInflater.from(parent.context)
@@ -25,8 +30,10 @@ class TermsAdapter(private val termsList: List<TradingTerms>) :
         val term = termsList[position]
         holder.name.text = term.term
         holder.enName.text = term.englishName
+        holder.itemView.setOnClickListener {
+            onTermsClickListener?.onTermClick(term)
+        }
     }
-
 
     class TermsViewHolder(termsView: View) : RecyclerView.ViewHolder(termsView) {
         var name: TextView
@@ -36,5 +43,9 @@ class TermsAdapter(private val termsList: List<TradingTerms>) :
             name = termsView.findViewById(R.id.tv_item_name)
             enName = termsView.findViewById(R.id.tv_item_en_name)
         }
+    }
+
+    interface OnTermClickListener {
+        fun onTermClick(term: TradingTerms)
     }
 }

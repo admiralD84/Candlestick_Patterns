@@ -10,6 +10,12 @@ import uz.admiraldev.candlepatterns.models.TradingIndicator
 
 class IndicatorsAdapter(private val indicatorList: List<TradingIndicator>) :
     RecyclerView.Adapter<IndicatorsAdapter.TermsViewHolder>() {
+    private var onIndicatorClickListener: OnIndicatorClickListener? = null
+
+    fun setOnIndicatorClickListener(listener: OnIndicatorClickListener) {
+        onIndicatorClickListener = listener
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TermsViewHolder {
         val contentItemView = LayoutInflater.from(parent.context)
@@ -25,6 +31,9 @@ class IndicatorsAdapter(private val indicatorList: List<TradingIndicator>) :
         val indicator = indicatorList[position]
         holder.name.text = indicator.name
         holder.enName.text = indicator.englishName
+        holder.itemView.setOnClickListener {
+            onIndicatorClickListener?.onIndicatorClick(indicator)
+        }
     }
 
 
@@ -37,4 +46,9 @@ class IndicatorsAdapter(private val indicatorList: List<TradingIndicator>) :
             enName = termsView.findViewById(R.id.tv_item_en_name)
         }
     }
+
+    interface OnIndicatorClickListener {
+        fun onIndicatorClick(indicator: TradingIndicator)
+    }
+
 }

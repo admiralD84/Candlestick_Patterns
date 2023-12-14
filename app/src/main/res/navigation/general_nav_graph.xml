@@ -70,5 +70,10 @@
         android:name="uz.admiraldev.candlepatterns.views.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/detailedInfoFragment"
+        android:name="uz.admiraldev.candlepatterns.views.DetailedInfoFragment"
+        android:label="fragment_detailed_info"
+        tools:layout="@layout/fragment_detailed_info" />
 
 </navigation>

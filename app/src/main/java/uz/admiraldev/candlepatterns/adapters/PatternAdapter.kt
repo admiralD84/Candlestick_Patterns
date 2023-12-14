@@ -12,10 +12,15 @@ import uz.admiraldev.candlepatterns.R
 import uz.admiraldev.candlepatterns.models.Patterns
 
 class PatternAdapter(
+    private val itemClickListener: PatternAdapter.OnPatternClickListener,
     private val patternsList: List<Patterns>,
     private val context: Context
 ) :
     RecyclerView.Adapter<PatternAdapter.MyViewHolder>() {
+ /*   private var onPatternClickListener: PatternAdapter.OnPatternClickListener? = null
+    fun setOnPatternsClickListener(listener: PatternAdapter.OnPatternClickListener) {
+        onPatternClickListener = listener
+    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val contentItemView =
@@ -35,6 +40,10 @@ class PatternAdapter(
             .load(pattern.patternTitleImage)
             .placeholder(R.drawable.bull_patterns)
             .into(holder.patternImage)
+
+        holder.itemView.setOnClickListener {
+            itemClickListener.onPatternClick(pattern)
+        }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -47,5 +56,9 @@ class PatternAdapter(
             patternEnName = itemView.findViewById(R.id.tv_pattern_en_name)
             patternName = itemView.findViewById(R.id.tv_pattern_name)
         }
+    }
+
+    interface OnPatternClickListener {
+        fun onPatternClick(pattern: Patterns)
     }
 }

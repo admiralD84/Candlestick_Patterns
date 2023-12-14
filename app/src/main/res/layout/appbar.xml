@@ -16,6 +16,17 @@
         android:padding="6dp"
         android:src="@drawable/ic_navigation_menu" />
 
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:contentDescription="@string/hamburger_menu_desc"
+        android:padding="6dp"
+        android:src="@drawable/ic_back"
+        android:visibility="gone" />
+
+
     <TextView
         android:id="@+id/toolbarTitle"
         android:layout_width="wrap_content"

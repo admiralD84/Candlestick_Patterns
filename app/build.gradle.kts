@@ -40,11 +40,17 @@ buildFeatures{
 
 dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
+
     // material-icons-extended
     runtimeOnly("androidx.compose.material:material-icons-extended:1.5.4")
+
     // material components
     runtimeOnly("com.google.android.material:material:1.10.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
     // android-gif-drawable
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
     implementation("androidx.room:room-runtime:2.6.1")

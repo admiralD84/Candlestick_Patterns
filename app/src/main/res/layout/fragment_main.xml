@@ -15,8 +15,8 @@
 
         <include
             android:id="@+id/toolbar"
-            android:visibility="visible"
-            layout="@layout/appbar" />
+            layout="@layout/appbar"
+            android:visibility="visible" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/generalNavFragment"
@@ -27,7 +27,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:navGraph="@navigation/general_nav_graph" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

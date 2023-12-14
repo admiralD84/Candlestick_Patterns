@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -35,12 +36,14 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     private var searchView: SearchView? = null
     private lateinit var navView: NavigationView
     private lateinit var navController: NavController
+    private lateinit var toolbar: Toolbar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        toolbar = binding.toolbar.customToolbar
 
         activity?.window?.statusBarColor =
             ContextCompat.getColor(requireContext(), R.color.transparent)
@@ -50,19 +53,35 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.homeFragment -> showToolbar(false, destination)
-                R.id.aboutFragment -> showToolbar(false, destination)
+                R.id.homeFragment ->
+                    showToolbar(false, destination)
+
+                R.id.detailedInfoFragment ->
+                    showShortedToolbar("Batafsil")
+
+                R.id.aboutFragment ->
+                    showShortedToolbar(getText(R.string.about_app_page_title))
+
                 else -> {
                     showToolbar(true, destination)
                 }
             }
         }
         navView = binding.drawerMenu
-
         drawerMenu = binding.drawerLayout
         drawerMenu.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
         return binding.root
+    }
+
+    private fun showShortedToolbar(title: CharSequence) {
+        binding.toolbar.searchView.visibility = View.GONE
+        binding.toolbar.navMenuButton.visibility = View.GONE
+        binding.toolbar.btnBack.visibility = View.VISIBLE
+        binding.toolbar.toolbarTitle.text = title
+        binding.toolbar.btnBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -105,9 +124,13 @@ class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     }
 
     private fun showToolbar(show: Boolean, destination: NavDestination) {
-        val toolbar = binding.toolbar.customToolbar
         val toolbarTitle = binding.toolbar.toolbarTitle
         val fromRight = AnimationUtils.loadAnimation(context, R.anim.from_left_toolbar)
+        if (binding.toolbar.searchView.visibility == View.GONE) {
+            binding.toolbar.searchView.visibility = View.VISIBLE
+            binding.toolbar.navMenuButton.visibility = View.VISIBLE
+            binding.toolbar.btnBack.visibility = View.GONE
+        }
         if (show) {
             toolbarTitle.text = getToolbarTitle(destination)
             if (toolbar.visibility != View.VISIBLE) {
